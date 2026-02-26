@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="5_x8euu"]
 [ext_resource type="PackedScene" uid="uid://d2w2i5h0lhc6l" path="res://scenes/slime.tscn" id="6_l0s6b"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="7_8cblx"]
+[ext_resource type="PackedScene" uid="uid://d3x5e6p8c8q8e" path="res://scenes/double_jump_item.tscn" id="8_djump"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ashvg"]
 texture = ExtResource("2_r1crl")
@@ -495,6 +496,9 @@ position = Vector2(74, 141)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_cn5tm")
+
+[node name="DoubleJumpItem" parent="." instance=ExtResource("8_djump")]
+position = Vector2(0, -50)
 
 [node name="Coins" type="Node" parent="."]
 
