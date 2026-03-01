@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d2w2i5h0lhc6l" path="res://scenes/slime.tscn" id="6_l0s6b"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="7_8cblx"]
 [ext_resource type="PackedScene" uid="uid://d3x5e6p8c8q8e" path="res://scenes/double_jump_item.tscn" id="8_djump"]
+[ext_resource type="PackedScene" uid="uid://bmgw2r1826gq6" path="res://scenes/maze_wall.tscn" id="9_mwall"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ashvg"]
 texture = ExtResource("2_r1crl")
@@ -497,8 +498,64 @@ position = Vector2(74, 141)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_cn5tm")
 
-[node name="DoubleJumpItem" parent="." instance=ExtResource("8_djump")]
-position = Vector2(0, -50)
+[node name="Maze" type="Node" parent="."]
+
+[node name="Floor1" parent="Maze" instance=ExtResource("9_mwall")]
+position = Vector2(-24, 69)
+
+[node name="Floor2" parent="Maze" instance=ExtResource("9_mwall")]
+position = Vector2(-40, 69)
+
+[node name="Floor3" parent="Maze" instance=ExtResource("9_mwall")]
+position = Vector2(-56, 69)
+
+[node name="Floor4" parent="Maze" instance=ExtResource("9_mwall")]
+position = Vector2(-72, 69)
+
+[node name="Floor5" parent="Maze" instance=ExtResource("9_mwall")]
+position = Vector2(-88, 69)
+
+[node name="Wall1" parent="Maze" instance=ExtResource("9_mwall")]
+position = Vector2(-88, 53)
+
+[node name="Wall2" parent="Maze" instance=ExtResource("9_mwall")]
+position = Vector2(-88, 37)
+
+[node name="Wall3" parent="Maze" instance=ExtResource("9_mwall")]
+position = Vector2(-88, 21)
+
+[node name="Wall4" parent="Maze" instance=ExtResource("9_mwall")]
+position = Vector2(-88, 5)
+
+[node name="Ceil1" parent="Maze" instance=ExtResource("9_mwall")]
+position = Vector2(-88, -11)
+
+[node name="Ceil2" parent="Maze" instance=ExtResource("9_mwall")]
+position = Vector2(-72, -11)
+
+[node name="Ceil3" parent="Maze" instance=ExtResource("9_mwall")]
+position = Vector2(-56, -11)
+
+[node name="Ceil4" parent="Maze" instance=ExtResource("9_mwall")]
+position = Vector2(-40, -11)
+
+[node name="InnerWall1" parent="Maze" instance=ExtResource("9_mwall")]
+position = Vector2(-40, 53)
+
+[node name="InnerWall2" parent="Maze" instance=ExtResource("9_mwall")]
+position = Vector2(-40, 37)
+
+[node name="Platform1" parent="Maze" instance=ExtResource("9_mwall")]
+position = Vector2(-24, 21)
+
+[node name="Platform2" parent="Maze" instance=ExtResource("9_mwall")]
+position = Vector2(-40, 21)
+
+[node name="DoubleJumpItem" parent="Maze" instance=ExtResource("8_djump")]
+position = Vector2(-64, 53)
+
+[node name="SecretCoin" parent="Maze" instance=ExtResource("4_28cek")]
+position = Vector2(-64, 5)
 
 [node name="Coins" type="Node" parent="."]
 
